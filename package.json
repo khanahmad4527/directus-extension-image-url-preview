@@ -1,0 +1,71 @@
+{
+  "name": "directus-extension-image-url-preview",
+  "description": "Preview any external image URL inside Directus — works in both form view and table list view.",
+  "icon": "image",
+  "version": "1.0.0",
+  "type": "module",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-bundle",
+    "image",
+    "preview",
+    "url",
+    "external",
+    "link",
+    "thumbnail",
+    "interface",
+    "display"
+  ],
+  "author": {
+    "name": "Ahmad Khan",
+    "url": "https://github.com/khanahmad4527"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanahmad4527/directus-extension-image-url-preview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khanahmad4527/directus-extension-image-url-preview/issues"
+  },
+  "homepage": "https://github.com/khanahmad4527/directus-extension-image-url-preview#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "directus:extension": {
+    "host": "^11.0.0",
+    "type": "bundle",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "interface",
+        "name": "image-url-interface",
+        "source": "src/interface/index.ts"
+      },
+      {
+        "type": "display",
+        "name": "image-url-display",
+        "source": "src/display/index.ts"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "add": "directus-extension add",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "11.0.10",
+    "typescript": "5.9.3",
+    "vue": "3.5.33"
+  },
+  "files": [
+    "dist"
+  ]
+}

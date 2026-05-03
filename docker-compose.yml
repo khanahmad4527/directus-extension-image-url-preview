@@ -1,0 +1,47 @@
+services:
+  database:
+    image: postgis/postgis:13-master
+    volumes:
+      - ./data/database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: directus
+      POSTGRES_PASSWORD: directus
+      POSTGRES_DB: directus
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "directus" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  cache:
+    image: redis:6
+
+  directus:
+    image: directus/directus:latest
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./data/uploads:/directus/uploads
+      - ./dist:/directus/extensions/directus-extension-image-url-preview/dist
+      - ./package.json:/directus/extensions/directus-extension-image-url-preview/package.json
+    depends_on:
+      database:
+        condition: service_healthy
+      cache:
+        condition: service_started
+    environment:
+      SECRET: "replace-with-random-secret"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+      DB_CLIENT: "pg"
+      DB_HOST: "database"
+      DB_PORT: "5432"
+      DB_DATABASE: "directus"
+      DB_USER: "directus"
+      DB_PASSWORD: "directus"
+      CACHE_ENABLED: "true"
+      CACHE_STORE: "redis"
+      REDIS: "redis://cache:6379"
+      EXTENSIONS_AUTO_RELOAD: "true"
+      WEBSOCKETS_ENABLED: "true"
+      CONTENT_SECURITY_POLICY_DIRECTIVES__IMG_SRC: "'self' data: blob: https:"
