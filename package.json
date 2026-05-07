@@ -2,7 +2,7 @@
   "name": "directus-extension-image-url-preview",
   "description": "Preview any external image URL inside Directus — works in both form view and table list view.",
   "icon": "image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "keywords": [
     "directus",

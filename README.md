@@ -2,7 +2,7 @@
 
 Preview any external image URL inside Directus — both in the **form view** (interface) and in **collection list views** (display). A bundle extension that ships both in a single install.
 
-![Interface preview](screenshots/detail-view.png)
+![Interface preview](https://raw.githubusercontent.com/khanahmad4527/directus-extension-image-url-preview/main/screenshots/detail-view.png)
 
 > Works with any public image URL: S3, CloudFront, Cloudflare R2, bunny.net, Cloudinary, Imgix, GitHub raw links, or anything else. No Directus-managed file relation required.
 
@@ -47,7 +47,7 @@ npm install directus-extension-image-url-preview
 3. Under **Interface**, select **Image URL Preview**
 4. Configure the options (see below)
 
-![Interface settings](screenshots/interface-settings.png)
+![Interface settings](https://raw.githubusercontent.com/khanahmad4527/directus-extension-image-url-preview/main/screenshots/interface-settings.png)
 
 ### Display (table / list view)
 
@@ -55,11 +55,11 @@ npm install directus-extension-image-url-preview
 2. Under **Display**, select **Image URL Preview**
 3. Pick a size and shape
 
-![Display settings](screenshots/display-settings.png)
+![Display settings](https://raw.githubusercontent.com/khanahmad4527/directus-extension-image-url-preview/main/screenshots/display-settings.png)
 
 Once configured, thumbnails render inline in the collection list:
 
-![List view with thumbnails](screenshots/list-view.png)
+![List view with thumbnails](https://raw.githubusercontent.com/khanahmad4527/directus-extension-image-url-preview/main/screenshots/list-view.png)
 
 You can use the interface and display independently or together. Common pattern: use both, so the form lets you paste & preview the URL, and the list view shows a thumbnail.
 
@@ -75,7 +75,7 @@ You can use the interface and display independently or together. Common pattern:
 
 Click any preview to open the lightbox:
 
-![Lightbox](screenshots/lightbox.png)
+![Lightbox](https://raw.githubusercontent.com/khanahmad4527/directus-extension-image-url-preview/main/screenshots/lightbox.png)
 
 ## Display options
 
