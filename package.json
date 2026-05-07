@@ -17,10 +17,7 @@
     "interface",
     "display"
   ],
-  "author": {
-    "name": "Ahmad Khan",
-    "url": "https://github.com/khanahmad4527"
-  },
+  "author": "khanahmad4527",
   "license": "MIT",
   "repository": {
     "type": "git",
